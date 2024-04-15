@@ -10,23 +10,21 @@ def season(Y,M,D):
     elif M==1 or M==12:
         print("Winter")
     elif M==2:
-        if Y%4 == 0:
-            if Y%100 == 0:
-                if Y%400 == 0:
-                    if D<=29:
-                        print("Winter")
-                    else:
-                        print(-1)
-                else:
-                    if D<=28:
-                        print("Winter")
-                    else:
-                        print(-1)
+        if Y%400 == 0:
+            if D<=29:
+                print("Winter")
             else:
-                if D<=29:
-                    print("Winter")
-                else:
-                    print(-1)
+                print(-1)
+        elif Y%100 == 0:
+            if D<=28:
+                print("Winter")
+            else:
+                print(-1)
+        elif Y%4 == 0:
+            if D<=29:
+                print("Winter")
+            else:
+                print(-1)
         else:
             if D<=28:
                 print("Winter")
