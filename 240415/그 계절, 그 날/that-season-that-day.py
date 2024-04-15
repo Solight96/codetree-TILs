@@ -31,9 +31,9 @@ def season(Y,M,D):
             else:
                 print(-1)
     elif D != 31:
-        if M=4:
+        if M==4:
             print("Spring")
-        elif M=6:
+        elif M==6:
             print("Summer")
         else:
             print("Fall")
