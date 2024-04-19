@@ -24,7 +24,7 @@ for i in range(2, m*n + 1):
     y = y + dy[dir_num]
     answer[x][y] = i
 
-for i in range(m):
-    for j in range(n):
+for i in range(n):
+    for j in range(m):
         print(answer[i][j], end=' ')
     print()
