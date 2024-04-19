@@ -7,7 +7,7 @@ dy = [0, 1, 0, -1]
 
 dir_num = 0
 t = 0
-result = 0
+result = []
 
 for i in range(1, N+1):
     direct, dist = map(str, input().split())
@@ -23,10 +23,9 @@ for i in range(1, N+1):
         x, y = x + dx[dir_num], y + dy[dir_num]
         t += 1
         if (x, y) == (0, 0):
-            result = t
-            break
+            result.append(t)
 
-if result != 0:
-    print(result)
+if result != []:
+    print(result[0])
 else:
     print(-1)
