@@ -17,15 +17,15 @@ cnt = 0
 dx = [-1, 0, 1, 0]
 dy = [0, 1, 0, -1]
 
-dir_num = (K//N+2)%4
+dir_num = ((K-1)//N+2)%4
 
-if K//N == 0:
+if (K-1)//N == 0:
     x, y = 0, (K-1)%N
-elif K//N == 1:
+elif (K-1)//N == 1:
     x, y = (K-1)%N, N-1
-elif K//N == 2:
+elif (K-1)//N == 2:
     x, y = N-1, (3*N-K)
-elif K//N == 3:
+elif (K-1)//N == 3:
     x, y = (4*N-K), 0
 
 while True:
