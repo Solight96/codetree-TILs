@@ -17,7 +17,7 @@ cnt = 0
 dx = [-1, 0, 1, 0]
 dy = [0, 1, 0, -1]
 
-dir_num = ((K-1)//N+2)%4
+dir_num = (((K-1)//N)+2)%4
 
 if (K-1)//N == 0:
     x, y = 0, (K-1)%N
@@ -40,11 +40,11 @@ while True:
         elif v[x][y] == '/':
             dir_num = (dir_num+3)%4
     nx = x + dx[dir_num]
-    ny = y + dx[dir_num]
+    ny = y + dy[dir_num]
+    cnt += 1
     if in_range(nx, ny):
         x = x + dx[dir_num]
-        y = y + dx[dir_num]
-        cnt += 1
+        y = y + dy[dir_num]
     else:
         break
 print(cnt)
