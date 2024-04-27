@@ -21,6 +21,7 @@ for i in range(N):
     v[i] = num
 
 result += v[x][y]
+check[x][y] = 1
 for j in range(T):
     if string[j] == 'L':
         dir_num = (dir_num+3)%4
