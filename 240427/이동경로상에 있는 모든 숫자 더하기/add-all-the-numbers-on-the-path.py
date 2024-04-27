@@ -20,10 +20,8 @@ for i in range(N):
     num = list(map(int, input().split()))
     v[i] = num
 
-for j in range(len(string)):
-    if check[x][y] == 0:
-        result += v[x][y]
-        check[x][y] = 1
+result += v[x][y]
+for j in range(T):
     if string[j] == 'L':
         dir_num = (dir_num+3)%4
     elif string[j] == 'R':
@@ -31,10 +29,10 @@ for j in range(len(string)):
     elif string[j] == 'F':
         nx = x + dx[dir_num]
         ny = y + dy[dir_num]
-        if in_range(nx, ny):
+        if in_range(nx, ny) and check[nx][ny] == 0:
             x = x + dx[dir_num]
             y = y + dy[dir_num]
-result += v[x][y]
-
+            result += v[x][y]
+            check[x][y] = 1
 
 print(result)
