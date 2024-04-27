@@ -3,7 +3,6 @@ N, T = map(int, input().split())
 string = str(input())
 
 v = [[0]*N for _ in range(N)]
-check = [[0]*N for _ in range(N)]
 
 dx = [-1, 0, 1, 0]
 dy = [0, 1, 0, -1]
@@ -21,7 +20,6 @@ for i in range(N):
     v[i] = num
 
 result += v[x][y]
-check[x][y] = 1
 for j in range(T):
     if string[j] == 'L':
         dir_num = (dir_num+3)%4
@@ -30,10 +28,9 @@ for j in range(T):
     elif string[j] == 'F':
         nx = x + dx[dir_num]
         ny = y + dy[dir_num]
-        if in_range(nx, ny) and check[nx][ny] == 0:
+        if in_range(nx, ny):
             x = x + dx[dir_num]
             y = y + dy[dir_num]
             result += v[x][y]
-            check[x][y] = 1
 
 print(result)
