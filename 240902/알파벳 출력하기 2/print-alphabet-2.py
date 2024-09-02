@@ -8,5 +8,5 @@ for i in range(N):
         print(chr(cnt), end=' ')
         cnt += 1
         if cnt == 91:
-            cnt == 65
+            cnt = 65
     print()
