@@ -15,8 +15,8 @@ for cnt in range(1, n ** 2+1):
             y -= 1
     else:
         x += 1
-        if x>3:
-            x = 3
+        if x>(n-1):
+            x = n-1
             y -= 1
 
 for i in range(n):
