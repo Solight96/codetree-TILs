@@ -5,7 +5,7 @@ arr = list(map(int, input().split()))
 
 for i in range(n):
     for j in range(i+1, n):
-        sub = abs(i-j)
+        sub = abs(arr[i]-arr[j])
         if sub <= result:
             result = sub
 print(result)
