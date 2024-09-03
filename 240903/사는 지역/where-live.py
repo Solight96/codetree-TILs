@@ -5,21 +5,11 @@ class info:
         self.location = location
 
 n = int(input())
-arr1 = []
-arr2 = []
-arr3 = []
-idx = 0
 
 for _ in range(n):
-    inforamtion = tuple(input().split())
-    arr1.append(inforamtion[0])
-    arr2.append(inforamtion[1])
-    arr3.append(inforamtion[2])
+    information = [tuple(input().split())]
+    information.sort()
 
-for i in range(n-1):
-    if arr1[i][0] < arr1[i+1][0]:
-        idx = i+1
-
-print(f"name {arr1[idx]}")
-print(f"addr {arr2[idx]}")
-print(f"city {arr3[idx]}")
+print(f"name {information[-1][0]}")
+print(f"addr {information[-1][1]}")
+print(f"city {information[-1][2]}")
