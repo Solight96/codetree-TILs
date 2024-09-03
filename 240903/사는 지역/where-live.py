@@ -6,10 +6,13 @@ class info:
 
 n = int(input())
 
-for _ in range(n):
-    information = [tuple(input().split())]
-    information.sort()
+info_list = []
 
-print(f"name {information[-1][0]}")
-print(f"addr {information[-1][1]}")
-print(f"city {information[-1][2]}")
+for _ in range(n):
+    information = tuple(input().split())
+    info_list.append(information)
+info_list.sort()
+
+print(f"name {info_list[-1][0]}")
+print(f"addr {info_list[-1][1]}")
+print(f"city {info_list[-1][2]}")
