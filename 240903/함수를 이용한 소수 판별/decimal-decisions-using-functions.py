@@ -1,9 +1,10 @@
 def prime(n):
-    is_prime = True
+    if n == 1:
+        return False
     for i in range(2, n):
         if n%i == 0:
-            is_prime = False
-    return is_prime
+            return False
+    return True
 
 a, b = map(int, input().split())
 result = 0
