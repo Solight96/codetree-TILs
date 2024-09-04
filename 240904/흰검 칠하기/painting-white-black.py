@@ -14,15 +14,15 @@ for _ in range(n):
             else:
                 loc[i] = 'B'
                 cnt[i] += 1
-        x = nx
+        x = nx - 1
     elif order[1] == 'L':
         nx = x - int(order[0])
-        for i in range(nx+100*n, x+100*n):
+        for i in range(x+100*n, nx+100*n, -1):
             if cnt[i] == 3 or loc[i] == 'G':
                 loc[i] = 'G'
             else:
                 loc[i] = 'W'
                 cnt[i] += 1
-        x = nx
+        x = nx + 1
 
 print(loc.count('W'), loc.count('B'), loc.count('G'))
