@@ -6,4 +6,4 @@ for _ in range(n):
     for i in range(x1+99, x2+100):
         order[i] += 1
 
-print(max(order) - 1)
+print(max(order))
