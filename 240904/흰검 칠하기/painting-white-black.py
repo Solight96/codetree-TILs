@@ -1,7 +1,8 @@
 n = int(input())
 loc = [0] * (200 * n)
 x = 0
-cnt = [0] * (200 * n)
+cnt_b = [0] * (200 * n)
+cnt_w = [0] * (200 * n)
 
 for _ in range(n):
     order = input().split()
@@ -9,20 +10,20 @@ for _ in range(n):
     if order[1] == 'R':
         nx = x + int(order[0])
         for i in range(x+100*n, nx+100*n):
-            if cnt[i] == 3 or loc[i] == 'G':
+            if (cnt_w[i] >= 2 and cnt_b[i] >= 1) or loc[i] == 'G':
                 loc[i] = 'G'
             else:
                 loc[i] = 'B'
-                cnt[i] += 1
+                cnt_b[i] += 1
         x = nx - 1
     elif order[1] == 'L':
         nx = x - int(order[0])
         for i in range(x+100*n, nx+100*n, -1):
-            if cnt[i] == 3 or loc[i] == 'G':
+            if (cnt_b[i] >= 2 and cnt_w[i] >= 1) or loc[i] == 'G':
                 loc[i] = 'G'
             else:
                 loc[i] = 'W'
-                cnt[i] += 1
+                cnt_w[i] += 1
         x = nx + 1
 
 print(loc.count('W'), loc.count('B'), loc.count('G'))
