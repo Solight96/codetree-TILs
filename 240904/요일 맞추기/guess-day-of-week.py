@@ -13,7 +13,7 @@ def date(m1, d1, m2, d2):
             m1 -= 1
             m1 += day_arr[m1]
     
-    cnt += abs(d2 - d1)
+    cnt += d2 - d1
 
     return date_arr[cnt%7]
 
