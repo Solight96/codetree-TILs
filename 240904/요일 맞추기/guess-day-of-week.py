@@ -11,7 +11,7 @@ def date(m1, d1, m2, d2):
             d2 += day_arr[m2]
         else:
             m1 -= 1
-            m1 += day_arr[m1]
+            d1 += day_arr[m1]
     
     cnt += d2 - d1
 
