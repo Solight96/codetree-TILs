@@ -5,7 +5,7 @@ for _ in range(N):
     n = int(input())
     arr.append(n)
 
-result = 0
+result = 1
 
 for i in range(len(arr)):
     if i == 0:
