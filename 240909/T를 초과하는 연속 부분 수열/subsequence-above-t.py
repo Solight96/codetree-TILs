@@ -11,11 +11,12 @@ for i in range(len(num)):
         if num[i] > t:
             if num[i-1] > t:
                 cnt += 1
-                if result <= cnt:
-                    result = cnt
             else:
                 cnt = 1
         else:
             cnt = 0
+    
+    if result <= cnt:
+        result = cnt
 
 print(result)
