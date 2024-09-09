@@ -32,14 +32,12 @@ cnt = 0
 maximum = max(len(arr_A), len(arr_B))
 minimum = min(len(arr_A), len(arr_B))
 
-for i in range(maximum):
-    if i == 0 and arr_A[i] == arr_B[i]:
-        cnt += 1
-    elif i < minimum:
+for i in range(1, maximum):
+    if i < minimum:
         if arr_A[i-1] != arr_B[i-1] and arr_A[i] == arr_B[i]:
             cnt += 1
     else:
-        if len(arr_A) <= len(arr_B):
+        if len(arr_A) < len(arr_B):
             if arr_A[-1] != arr_B[i-1] and arr_A[-1] == arr_B[i]:
                 cnt += 1
         elif len(arr_A) > len(arr_B):
