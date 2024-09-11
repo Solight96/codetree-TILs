@@ -2,6 +2,6 @@ N, k = map(int, input().split())
 
 num = list(map(int, input().split()))
 
-num.sort(reverse=True)
+num.sort()
 
 print(num[k-1])
