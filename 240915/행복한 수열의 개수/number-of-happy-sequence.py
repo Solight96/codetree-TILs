@@ -10,11 +10,14 @@ def happyseq(row, col, m):
     r=[]
     c=[]
     
+    if m == 1:
+        return 2*n
+
     for i in range(row-1):
         for j in range(col-1):
             if v[i][j] == v[i][j+1]:
                 cnt_r += 1
-                if cnt_r == m:
+                if cnt_r >= m:
                     if not i in r:
                         r.append(i)
                         num += 1
@@ -23,7 +26,7 @@ def happyseq(row, col, m):
             
             if v[i][j] == v[i+1][j]:
                 cnt_c += 1
-                if cnt_c == m:
+                if cnt_c >= m:
                     if not j in c:
                         c.append(j)
                         num += 1
