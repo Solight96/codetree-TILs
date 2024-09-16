@@ -58,9 +58,9 @@ def get_gold_in_border(r, c, k):
 gold = 0
 arr = []
 
-k = n//2
-for i in range(k+1):
-    gold += get_gold_in_border(n//2, n//2, i)
+
+for k in range(n):
+    gold += get_gold_in_border(n//2, n//2, k)
     gain = gold * m - (k ** 2 + (k+1) ** 2)
     if gain >= 0:
         arr.append(gold)
