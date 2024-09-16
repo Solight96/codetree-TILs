@@ -64,5 +64,7 @@ for i in range(n):
             gain = gold * m - (k ** 2 + (k+1) ** 2)
             if gain >= 0:
                 arr.append(gold)
+            else:
+                arr.append(0)
 
 print(max(arr))
