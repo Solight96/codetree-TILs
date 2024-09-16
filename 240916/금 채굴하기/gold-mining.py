@@ -41,7 +41,6 @@ def in_range (r, c):
     return 0 <= r and r < n and 0 <= c and c < n
 
 def get_gold_in_border(r, c, k):
-    # 방향에 따라 바뀌는 dr,dc
     drs, dcs = [1, 1, -1, -1],[-1, 1, 1, -1]
     if k == 0:
         return v[r][c]
@@ -55,14 +54,15 @@ def get_gold_in_border(r, c, k):
             c_c += dc
     return num_gold
 
-gold = 0
 arr = []
 
-
-for k in range(n):
-    gold += get_gold_in_border(n//2, n//2, k)
-    gain = gold * m - (k ** 2 + (k+1) ** 2)
-    if gain >= 0:
-        arr.append(gold)
+for i in range(n):
+    for j in range(n):
+        gold = 0
+        for k in range(n):
+            gold += get_gold_in_border(i, j, k)
+            gain = gold * m - (k ** 2 + (k+1) ** 2)
+            if gain >= 0:
+                arr.append(gold)
 
 print(max(arr))
