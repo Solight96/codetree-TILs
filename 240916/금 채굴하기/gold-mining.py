@@ -59,7 +59,7 @@ arr = []
 for i in range(n):
     for j in range(n):
         gold = 0
-        for k in range(n):
+        for k in range(2*n-1):
             gold += get_gold_in_border(i, j, k)
             gain = gold * m - (k ** 2 + (k+1) ** 2)
             if gain >= 0:
