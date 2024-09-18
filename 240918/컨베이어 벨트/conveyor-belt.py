@@ -9,7 +9,7 @@ for _ in range(t):
     temp = arr[-1]
     for i in range(2*n-1, 0, -1):
         arr[i] = arr[i-1]
-        arr[0] = temp
+    arr[0] = temp
 
 print(*arr[:n])
 print(*arr[n:])
