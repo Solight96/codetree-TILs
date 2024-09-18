@@ -11,5 +11,5 @@ for _ in range(t):
         arr[i] = arr[i-1]
         arr[0] = temp
 
-print(*arr[:3])
-print(*arr[3:])
+print(*arr[:n])
+print(*arr[n:])
