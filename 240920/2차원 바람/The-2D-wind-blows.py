@@ -3,6 +3,7 @@ import copy
 N, M, Q = map(int, input().split())
 
 v = [list(map(int, input().split())) for _ in range(N)]
+v2 = []
 
 arr = []
 
