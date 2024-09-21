@@ -7,31 +7,39 @@ v2 = [[0] * N for _ in range(N)]
 v3 = [[0] * N for _ in range(N)]
 
 for k in range(K):
-    for j in range(N):
-        cnt = 1
-        for i in range(N):
-            if i == N-1:
-                if cnt >= M:
-                    for b in range(i-cnt+1, i+1):
-                        v[b][j] = 0
+    while True:
+        for j in range(N):
+            cnt = 1
+            for i in range(N):
+                if i == N-1:
+                    if cnt >= M:
+                        for b in range(i-cnt+1, i+1):
+                            v[b][j] = 0
 
-            elif v[i][j] == v[i+1][j]:
-                cnt += 1
+                elif v[i][j] == v[i+1][j]:
+                    cnt += 1
 
-            else:
-                if cnt >= M:
-                    for b in range(i-cnt+1, i+1):
-                        v[b][j] = 0
-                cnt = 1
-    #폭탄터지기 완료
-    
-    for j in range(N):
-        cnt = N-1
-        for i in range(N-1, -1, -1):
-            if v[i][j] != 0:
-                v2[cnt][j] = v[i][j]
-                cnt -= 1
-    # 중력작용 완료
+                else:
+                    if cnt >= M:
+                        for b in range(i-cnt+1, i+1):
+                            v[b][j] = 0
+                    cnt = 1
+        #폭탄터지기 완료
+        
+        for j in range(N):
+            cnt = N-1
+            for i in range(N-1, -1, -1):
+                if v[i][j] != 0:
+                    v2[cnt][j] = v[i][j]
+                    cnt -= 1
+        # 중력작용 완료
+        
+        if v2 == v:
+            break
+        else:
+            v = copy.deepcopy(v2)
+            v2 = [[0] * N for _ in range(N)]
+
 
     for i in range(N-1, -1, -1):
         cnt = N-1
