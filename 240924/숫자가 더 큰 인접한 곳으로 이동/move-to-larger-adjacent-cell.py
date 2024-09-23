@@ -14,12 +14,17 @@ num = v[r][c]
 arr = []
 arr.append(num)
 
-for dx, dy in zip(dxs, dys):
-    nx, ny = r + dx, c + dy
+while True:
+    for dx, dy in zip(dxs, dys):
+        nx, ny = r + dx, c + dy
 
-    if in_range(nx, ny) and num < v[nx][ny]:
-        num = v[nx][ny]
-        r, c = nx, ny
-        arr.append(num)
+        if in_range(nx, ny) and num < v[nx][ny]:
+            num = v[nx][ny]
+            r, c = nx, ny
+            arr.append(num)
+            break
+
+    if c != ny:
+        break
 
 print(*arr)
