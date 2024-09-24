@@ -97,8 +97,7 @@ arr2 = []
 
 for i in range(n):
     for j in range(n):
-        if v[i][j] == 0:
-            result = pinball(i,j)
-            arr2.append(result)
+        result = pinball(i,j)
+        arr2.append(result)
 
 print(max(arr2))
