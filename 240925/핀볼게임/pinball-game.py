@@ -49,7 +49,8 @@ arr2 = []
 
 for i in range(n):
     for j in range(n):
-        result = pinball(i,j)
-        arr2.append(result)
+        if i == 0 or i == n-1 or j == 0 or j == n-1:
+            result = pinball(i,j)
+            arr2.append(result)
 
 print(max(arr2))
