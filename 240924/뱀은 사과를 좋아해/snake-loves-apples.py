@@ -30,8 +30,12 @@ for _ in range(K):
             if in_range(nx, ny):
                 x, y = nx, ny
                 if v[x][y] == 2:
-                    finish = True
-                    break # 게임 종료(몸 꼬임)
+                    if (x, y) == arr[0]:
+                        tx, ty = arr.pop(0)
+                        arr.append((tx, ty))
+                    else:
+                        finish = True
+                        break # 게임 종료(몸 꼬임)
                 elif v[x][y] == 1:
                     v[x][y] = 2
                     arr.append((x, y))
@@ -51,8 +55,12 @@ for _ in range(K):
             if in_range(nx, ny):
                 x, y = nx, ny
                 if v[x][y] == 2:
-                    finish = True
-                    break # 게임 종료(몸 꼬임)
+                    if (x, y) == arr[0]:
+                        tx, ty = arr.pop(0)
+                        arr.append((tx, ty))
+                    else:
+                        finish = True
+                        break # 게임 종료(몸 꼬임)
                 elif v[x][y] == 1:
                     v[x][y] = 2
                     arr.append((x, y)) 
@@ -72,8 +80,12 @@ for _ in range(K):
             if in_range(nx, ny):
                 x, y = nx, ny
                 if v[x][y] == 2:
-                    finish = True
-                    break # 게임 종료(몸 꼬임)
+                    if (x, y) == arr[0]:
+                        tx, ty = arr.pop(0)
+                        arr.append((tx, ty))
+                    else:
+                        finish = True
+                        break # 게임 종료(몸 꼬임)
                 elif v[x][y] == 1:
                     v[x][y] = 2
                     arr.append((x, y)) 
@@ -85,7 +97,7 @@ for _ in range(K):
             else:
                 finish = True
                 break # 게임 종료(격자 밖)
-    
+        
     elif d == 'L':
         for _ in range(int(p)):
             nx, ny = x + dxs[3], y + dys[3]
@@ -93,8 +105,12 @@ for _ in range(K):
             if in_range(nx, ny):
                 x, y = nx, ny
                 if v[x][y] == 2:
-                    finish = True
-                    break # 게임 종료(몸 꼬임)
+                    if (x, y) == arr[0]:
+                        tx, ty = arr.pop(0)
+                        arr.append((tx, ty))
+                    else:
+                        finish = True
+                        break # 게임 종료(몸 꼬임)
                 elif v[x][y] == 1:
                     v[x][y] = 2
                     arr.append((x, y))
@@ -106,7 +122,7 @@ for _ in range(K):
             else:
                 finish = True
                 break # 게임 종료(격자 밖)
-    
+
     if finish:
         break
 
