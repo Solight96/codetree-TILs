@@ -16,14 +16,18 @@ def pinball(x,y):
     if x == 0:
         direct = 2
         while not finish:
-            nx, ny = x+dxs[direct], y+dys[direct]
+            nx, ny = x+dxs[direct%4], y+dys[direct%4]
             t += 1
             if in_range(nx, ny):
                 x, y = nx, ny
-                if v[x][y] == 1:
-                    direct = 3
-                elif v[x][y] == 2:
-                    direct = 1
+                if direct%2 == 0 and v[x][y] == 1:
+                    direct += 1
+                elif direct%2 == 0 and v[x][y] == 2:
+                    direct += 3
+                elif direct%2 != 0 and v[x][y] == 1:
+                    direct += 3
+                elif direct%2 != 0 and v[x][y] == 2:
+                    direct += 1
             else:
                 arr.append(t)
                 finish = True
@@ -31,14 +35,18 @@ def pinball(x,y):
     elif x == n-1:
         direct = 0
         while not finish:
-            nx, ny = x+dxs[direct], y+dys[direct]
+            nx, ny = x+dxs[direct%4], y+dys[direct%4]
             t += 1
             if in_range(nx, ny):
                 x, y = nx, ny
-                if v[x][y] == 1:
-                    direct = 1
-                elif v[x][y] == 2:
-                    direct = 3
+                if direct%2 == 0 and v[x][y] == 1:
+                    direct += 1
+                elif direct%2 == 0 and v[x][y] == 2:
+                    direct += 3
+                elif direct%2 != 0 and v[x][y] == 1:
+                    direct += 3
+                elif direct%2 != 0 and v[x][y] == 2:
+                    direct += 1
             else:
                 arr.append(t)
                 finish = True
@@ -46,14 +54,18 @@ def pinball(x,y):
     if y == 0:
         direct = 1
         while not finish:
-            nx, ny = x+dxs[direct], y+dys[direct]
+            nx, ny = x+dxs[direct%4], y+dys[direct%4]
             t += 1
             if in_range(nx, ny):
                 x, y = nx, ny
-                if v[x][y] == 1:
-                    direct = 0
-                elif v[x][y] == 2:
-                    direct = 2
+                if direct%2 == 0 and v[x][y] == 1:
+                    direct += 1
+                elif direct%2 == 0 and v[x][y] == 2:
+                    direct += 3
+                elif direct%2 != 0 and v[x][y] == 1:
+                    direct += 3
+                elif direct%2 != 0 and v[x][y] == 2:
+                    direct += 1
             else:
                 arr.append(t)
                 finish = True
@@ -61,14 +73,18 @@ def pinball(x,y):
     elif y == n-1:
         direct = 3
         while not finish:
-            nx, ny = x+dxs[direct], y+dys[direct]
+            nx, ny = x+dxs[direct%4], y+dys[direct%4]
             t += 1
             if in_range(nx, ny):
                 x, y = nx, ny
-                if v[x][y] == 1:
-                    direct = 2
-                elif v[x][y] == 2:
-                    direct = 0
+                if direct%2 == 0 and v[x][y] == 1:
+                    direct += 1
+                elif direct%2 == 0 and v[x][y] == 2:
+                    direct += 3
+                elif direct%2 != 0 and v[x][y] == 1:
+                    direct += 3
+                elif direct%2 != 0 and v[x][y] == 2:
+                    direct += 1
             else:
                 arr.append(t)
                 finish = True
