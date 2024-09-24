@@ -10,7 +10,6 @@ dys = [0,1,0,-1]
 
 def pinball(x,y):
     t = 1
-    arr = []
     finish = False
 
     if x == 0:
@@ -21,8 +20,6 @@ def pinball(x,y):
         direct = 1
     elif y == n-1:
         direct = 3
-    # else:
-    #     return 0
 
     while not finish:
         nx, ny = x+dxs[direct%4], y+dys[direct%4]
@@ -30,33 +27,28 @@ def pinball(x,y):
         if in_range(nx, ny):
             x, y = nx, ny
             if direct%2 == 0:
-                if v[x][y] == 1:
-                    direct += 1
-                elif v[x][y] == 2:
-                    direct += 3
+                if v[x][y] == 1: direct += 1
+                elif v[x][y] == 2: direct += 3
             else:
-                if v[x][y] == 1:
-                    direct += 3
-                elif v[x][y] == 2:
-                    direct += 1
+                if v[x][y] == 1: direct += 3
+                elif v[x][y] == 2: direct += 1
         else:
-            arr.append(t)
             finish = True
             
-    return max(arr)
+    return t
 
-arr2 = []
+arr = []
 
 
 for i in range(n):
     result1 = pinball(i,0)
     result2 = pinball(i,n-1)
-    arr2.append(result1)
-    arr2.append(result2)
+    arr.append(result1)
+    arr.append(result2)
 for j in range(n):
     result1 = pinball(0,j)
     result2 = pinball(n-1,j)
-    arr2.append(result1)
-    arr2.append(result2)
+    arr.append(result1)
+    arr.append(result2)
 
-print(max(arr2))
+print(max(arr))
