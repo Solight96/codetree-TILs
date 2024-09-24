@@ -39,7 +39,6 @@ def pinball(x,y):
 
 arr = []
 
-
 for i in range(n):
     result1 = pinball(i,0)
     result2 = pinball(i,n-1)
