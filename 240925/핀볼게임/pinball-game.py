@@ -15,82 +15,34 @@ def pinball(x,y):
 
     if x == 0:
         direct = 2
-        while not finish:
-            nx, ny = x+dxs[direct%4], y+dys[direct%4]
-            t += 1
-            if in_range(nx, ny):
-                x, y = nx, ny
-                if direct%2 == 0 and v[x][y] == 1:
-                    direct += 1
-                elif direct%2 == 0 and v[x][y] == 2:
-                    direct += 3
-                elif direct%2 != 0 and v[x][y] == 1:
-                    direct += 3
-                elif direct%2 != 0 and v[x][y] == 2:
-                    direct += 1
-            else:
-                arr.append(t)
-                finish = True
-            
     elif x == n-1:
         direct = 0
-        while not finish:
-            nx, ny = x+dxs[direct%4], y+dys[direct%4]
-            t += 1
-            if in_range(nx, ny):
-                x, y = nx, ny
-                if direct%2 == 0 and v[x][y] == 1:
-                    direct += 1
-                elif direct%2 == 0 and v[x][y] == 2:
-                    direct += 3
-                elif direct%2 != 0 and v[x][y] == 1:
-                    direct += 3
-                elif direct%2 != 0 and v[x][y] == 2:
-                    direct += 1
-            else:
-                arr.append(t)
-                finish = True
-
-    if y == 0:
+    elif y == 0:
         direct = 1
-        while not finish:
-            nx, ny = x+dxs[direct%4], y+dys[direct%4]
-            t += 1
-            if in_range(nx, ny):
-                x, y = nx, ny
-                if direct%2 == 0 and v[x][y] == 1:
-                    direct += 1
-                elif direct%2 == 0 and v[x][y] == 2:
-                    direct += 3
-                elif direct%2 != 0 and v[x][y] == 1:
-                    direct += 3
-                elif direct%2 != 0 and v[x][y] == 2:
-                    direct += 1
-            else:
-                arr.append(t)
-                finish = True
-
     elif y == n-1:
         direct = 3
-        while not finish:
-            nx, ny = x+dxs[direct%4], y+dys[direct%4]
-            t += 1
-            if in_range(nx, ny):
-                x, y = nx, ny
-                if direct%2 == 0 and v[x][y] == 1:
-                    direct += 1
-                elif direct%2 == 0 and v[x][y] == 2:
-                    direct += 3
-                elif direct%2 != 0 and v[x][y] == 1:
-                    direct += 3
-                elif direct%2 != 0 and v[x][y] == 2:
-                    direct += 1
-            else:
-                arr.append(t)
-                finish = True
     else:
-        arr.append(0)
-    
+        return 0
+
+    while not finish:
+        nx, ny = x+dxs[direct%4], y+dys[direct%4]
+        t += 1
+        if in_range(nx, ny):
+            x, y = nx, ny
+            if direct%2 == 0:
+                if v[x][y] == 1:
+                    direct += 1
+                elif v[x][y] == 2:
+                    direct += 3
+            else:
+                if v[x][y] == 1:
+                    direct += 3
+                elif v[x][y] == 2:
+                    direct += 1
+        else:
+            arr.append(t)
+            finish = True
+            
     return max(arr)
 
 arr2 = []
