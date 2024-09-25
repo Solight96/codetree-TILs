@@ -21,6 +21,13 @@ def pinball(x,y):
     elif y == n-1:
         direct = 3
 
+    if direct%2 == 0:
+        if v[x][y] == 1: direct += 1
+        elif v[x][y] == 2: direct += 3
+    else:
+        if v[x][y] == 1: direct += 3
+        elif v[x][y] == 2: direct += 1
+
     while not finish:
         nx, ny = x+dxs[direct%4], y+dys[direct%4]
         t += 1
