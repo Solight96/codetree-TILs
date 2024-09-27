@@ -11,15 +11,12 @@ for _ in range(T):
     def in_range(x, y):
         return 0 <= x and x < N and 0 <= y and y < N
 
-    v = [[0] * N for _ in range(N)]
-    direct = [[-1] * N for _ in range(N)]
-
     arr = []
 
     for _ in range(M):
         x, y, d = input().split()
         x, y = int(x)-1, int(y)-1
-        v[x][y] = 1 # 1은 폭탄
+        
         if d == 'U': d = 0
         elif d == 'R': d = 1
         elif d == 'D': d = 2
