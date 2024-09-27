@@ -1,5 +1,3 @@
-import copy
-
 T = int(input())
 
 dxs = [-1, 0, 1, 0]
@@ -42,7 +40,7 @@ for _ in range(T):
             if cnt[x][y] == 1:
                 arr_result.append([x,y,d])
         
-        arr = copy.deepcopy(arr_result)
+        arr = arr_result
         
     print(len(arr))
 # --------------------------------------------------------------------
