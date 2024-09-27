@@ -18,16 +18,12 @@ for _ in range(T):
         x, y, d = input().split()
         x, y = int(x)-1, int(y)-1
         v[x][y] = 1 # 1은 폭탄
-        if d == 'U':
-            direct[x][y] = 0
-        elif d == 'R':
-            direct[x][y] = 1
-        elif d == 'D':
-            direct[x][y] = 2
-        elif d == 'L':
-            direct[x][y] = 3    
+        if d == 'U': direct[x][y] = 0
+        elif d == 'R': direct[x][y] = 1
+        elif d == 'D': direct[x][y] = 2
+        elif d == 'L': direct[x][y] = 3    
     
-    for _ in range(50):
+    for _ in range(2*N):
         v2 = [[0] * N for _ in range(N)]
         direct2 = [[-1] * N for _ in range(N)]
 
