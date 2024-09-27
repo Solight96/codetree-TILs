@@ -50,8 +50,7 @@ for _ in range(T):
     cnt = 0
 
     for i in range(N):
-        for j in range(N):
-            if v[i][j] == 1:
-                cnt += 1
+        if 1 in v[i]:
+            cnt += v[i].count(1)
         
     print(cnt)
