@@ -27,7 +27,7 @@ for _ in range(T):
         elif d == 'L':
             direct[x][y] = 3    
     
-    for _ in range(10):
+    for _ in range(100):
         v2 = [[0] * N for _ in range(N)]
         direct2 = [[-1] * N for _ in range(N)]
 
