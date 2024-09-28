@@ -34,13 +34,12 @@ def move_cur_num(a, b, c, cur_num, max_row, max_col, tar_idx, max_num, move_num)
 def find_the_biggest_num(row, col, point) :
     max_num = -1
     tar_idx = -1
-    global move_num
     
     for dx, dy in zip(dxs, dys) :
         next_row = row + dx
         next_col = col + dy
 
-        if is_in_range(next_row, next_col) :
+        if in_range(next_row, next_col) :
             for e in arr[next_row][next_col] :
                 if e >= max_num :
                     max_num = e
@@ -51,21 +50,17 @@ def find_the_biggest_num(row, col, point) :
     print(row, col, point, max_num, tar_idx)
 
 # 움직일 숫자의 위치 찾기
-def find_point(arr, move_num) :
+def find_loc(arr, num) :
     for a in range(len(arr)) :
         for b in range(len(arr[a])) :
             for c in range(len(arr[a][b])) :
-                if arr[a][b][c] == move_num :
-                    #print(a, b, c, move_num, arr)
+                if arr[a][b][c] == num :
                     return a, b, c
 
 for i in range(len(move_arr)) :
-    a, b, c = find_point(arr, move_arr[i])
-    if move_arr[i] == arr[a][b][c] :
-        # 8방향 중에서 제일 큰 숫자의 위치 리턴
-        max_row, max_col, tar_idx, max_num = find_the_biggest_num(a, b, c) 
-        arr = move_cur_num(a, b, c, arr[a][b][c], max_row, max_col, tar_idx, max_num, move_arr[i])
-#print(arr)
+    a, b, c = find_loc(arr, move_arr[i])
+    max_row, max_col, tar_idx, max_num = find_the_biggest_num(a, b, c) 
+    arr = move_cur_num(a, b, c, arr[a][b][c], max_row, max_col, tar_idx, max_num, move_arr[i])
 
 for e in arr :
     for ee in e :
