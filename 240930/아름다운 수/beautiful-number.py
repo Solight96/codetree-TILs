@@ -27,22 +27,23 @@ def chk_beaunum():
         else:
             cnt += 1
 
-global result
-result = 0
+# global result
+# result = 0
 
-def find_result(num):
+def find_result(num, result):
     if num == n+1:
         is_beau = chk_beaunum()
         if is_beau:
             result += 1
-        return
+        return result
     
     for i in range(1, 5):
         ans.append(i)
-        find_result(num+1)
+        result = find_result(num+1, result)
         ans.pop()
 
-    print(result)
+    return result
 
 
-find_result(1)
+result = find_result(1, 0)
+print(result)
