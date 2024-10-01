@@ -9,8 +9,8 @@ def in_range(x, y):
 def is_wall(x, y):
     return board[x][y] == 0
 
-dxs = [0, 1]
-dys = [1, 0]
+dxs = [-1,0,1,0]
+dys = [0,1,0,-1]
 
 arr = []
 
