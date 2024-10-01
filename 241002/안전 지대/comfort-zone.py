@@ -23,7 +23,7 @@ def dfs(x, y):
     return
 
 max_region = 0
-max_k = 0
+max_k = 1
 
 for K in range(1, max(map(max, board))+1):
     board_height = [[0] * M for _ in range(N)]
