@@ -1,5 +1,5 @@
 import sys
-sys.setrecursionlimit(5000)
+sys.setrecursionlimit(3000)
 
 N, M = map(int, input().split())
 
@@ -17,10 +17,11 @@ dys = [0, 1, 0, -1]
 def dfs(x, y):
     for dx, dy in zip(dxs, dys):
         nx, ny = x + dx, y + dy
-        if in_range(nx, ny) and not is_water(nx, ny) and not visited[nx][ny] == 0:
-            visited[nx][ny] = 1
-            dfs(nx, ny)
-    return
+        
+        if in_range(nx, ny) and not is_water(nx, ny) and visited[nx][ny] == 0:
+            x, y = nx, ny
+            visited[x][y] = 1
+            dfs(x, y)
 
 max_region = 0
 max_k = 1
