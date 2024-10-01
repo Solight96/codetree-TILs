@@ -17,15 +17,14 @@ def dfs(x, y):
         nx, ny = x + dx, y + dy
 
         if in_range(nx, ny) and not visited[nx][ny] and not is_snake(nx, ny):
-            x, y = nx, ny
-            visited[x][y] = True
-            dfs(x, y)
-    
-    if visited[n-1][m-1] == 1:
-        return 1
-    else:
-        return 0
+            x2, y2 = nx, ny
+            visited[x2][y2] = True
+            dfs(x2, y2)
 
 visited[0][0] = True
-result = dfs(0, 0)
-print(result)
+dfs(0, 0)
+
+if visited[n-1][m-1] == 1:
+    print(1)
+else:
+    print(0)
