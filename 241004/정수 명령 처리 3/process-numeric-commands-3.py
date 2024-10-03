@@ -8,18 +8,18 @@ class Deque():
     def push_back(self,num):
         self.dq.append(num)
     def pop_front(self):
-        return self.dq.popleft()
+        print(self.dq.popleft())
     def pop_back(self):
-        return self.dq.pop()
+        print(self.dq.pop())
     def size(self):
-        return len(self.dq)
+        print(len(self.dq))
     def empty(self):
-        if not dq: return 1
-        else: return 0
+        if self.dq: print(0)
+        else: print(1)
     def front(self):
-        return self.dq[0]
+        print(self.dq[0])
     def back(self):
-        return self.dq[-1]
+        print(self.dq[-1])
 
 N = int(input())
 
@@ -32,14 +32,14 @@ for _ in range(N):
     elif order[0] == 'push_front':
         dq.push_front(int(order[1]))
     elif order[0] == 'pop_front':
-        print(dq.pop_front())
+        dq.pop_front()
     elif order[0] == 'pop_back':
-        print(dq.pop_back())
+        dq.pop_back()
     elif order[0] == 'size':
-        print(dq.size())
+        dq.size()
     elif order[0] == 'empty':
-        print(dq.empty())
+        dq.empty()
     elif order[0] == 'front':
-        print(dq.front())
+        dq.front()
     elif order[0] == 'back':
-        print(dq.back())
+        dq.back()
