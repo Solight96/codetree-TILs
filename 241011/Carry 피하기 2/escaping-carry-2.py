@@ -10,7 +10,7 @@ arr100 = [(elem % 1000) // 100 for elem in arr]
 arr10 = [(elem % 100) // 10 for elem in arr]
 arr1 = [elem % 10 for elem in arr]
 
-result = 0
+result = -1
 
 for i in range(len(arr)-2):
     for j in range(i+1, len(arr)-1):
