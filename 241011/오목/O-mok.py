@@ -33,4 +33,5 @@ for i in range(15):
                 r, c = i+3, j+3
 
 print(result)
-print(r, c)
+if result == 1 or result == 2:
+    print(r, c)
