@@ -4,7 +4,7 @@ arr = list(map(int, input().split()))
 
 result = 0
 
-for i in range(n-k):
+for i in range(n-k+1):
     num = 0
     for j in range(i, i+k):
         num += arr[j]
