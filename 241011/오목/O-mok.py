@@ -32,6 +32,16 @@ for i in range(15):
                 result = 2
                 r, c = i+3, j+3
 
+for i in range(15):
+    for j in range(4, 19):
+        if board[i+4][j-4] == board[i+3][j-3] == board[i+2][j-2] == board[i+1][j-1] == board[i][j]:
+            if board[i][j] == 1:
+                result = 1
+                r, c = i+3, j-1
+            elif board[i][j] == 2:
+                result = 2
+                r, c = i+3, j-1
+
 print(result)
 if result == 1 or result == 2:
     print(r, c)
