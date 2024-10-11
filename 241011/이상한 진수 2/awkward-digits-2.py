@@ -1,6 +1,6 @@
 a = list(input())
 
-for i in range(1, len(a)):
+for i in range(len(a)):
     if i == len(a)-1 and a[i] == '1':
         a[i] = '0'
 
