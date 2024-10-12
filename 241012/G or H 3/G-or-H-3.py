@@ -5,7 +5,7 @@ GH = [0] * 10000
 
 for _ in range(N):
     loc, alpha = input().split()
-    arr.append(int(loc))
+    arr.append(int(loc)-1)
     GH[int(loc)-1] = alpha
 
 max_val = max(arr)
@@ -22,4 +22,7 @@ for i in range(max_val-K+1):
     if result < num:
         result = num
 
-print(result)
+if max_val <= K:
+    print(GH.count('G') + 2 * GH.count('H'))
+else:
+    print(result)
