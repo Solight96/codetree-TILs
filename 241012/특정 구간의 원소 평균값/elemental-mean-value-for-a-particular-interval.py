@@ -12,7 +12,8 @@ for i in range(N):
             num += arr[k]
         
         result = num / (j-i+1)
-        if result in arr:
+        
+        if result in arr[i:j+1]:
             cnt += 1
 
 print(cnt)
