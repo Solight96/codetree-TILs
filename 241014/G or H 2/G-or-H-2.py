@@ -29,11 +29,12 @@ for i in range(len(arr)):
         if (cnt_G * cnt_H == 0 and cnt_G + cnt_H != 0) or (cnt_G * cnt_H != 0 and cnt_G == cnt_H):
             arr2.sort()
             dist = arr2[-1] - arr2[0]
-            result = dist
+            if not dist in result:
+                result.append(dist)
 
     # print(f"---------------i={i}")
 
 if N == 1:
     print(0)
 else:
-    print(result)
+    print(max(result))
