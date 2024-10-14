@@ -7,8 +7,10 @@ for i in range(len(string)):
         num += 1
     else:
         num -= 1
-
-if string[0] == '(' and num == 0:
-    print('Yes')
-else:
-    print('No')
+    if num < 0:
+        print('No')
+        break
+    if i == len(string) -1 and num == 0:
+        print('Yes')
+    elif i == len(string) -1 and num != 0:
+        print('No')
