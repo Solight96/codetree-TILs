@@ -18,4 +18,7 @@ for i in range(K, max_val-K+2):
     
     result = max(result, num)
 
-print(result)
+if max_val-200 < K:
+    print(sum(arr))
+else:
+    print(result)
