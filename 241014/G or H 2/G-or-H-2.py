@@ -20,19 +20,16 @@ for i in range(len(arr)):
             if arr[k] == 'G':
                 cnt_G += 1
                 arr2.append(k)
-                # print(f"j={j}, k={k}, cnt_G={cnt_G}")
+
             elif arr[k] == 'H':
                 cnt_H += 1
                 arr2.append(k)
-                # print(f"j={j}, k={k}, cnt_H={cnt_H}")
 
         if (cnt_G * cnt_H == 0 and cnt_G + cnt_H != 0) or (cnt_G * cnt_H != 0 and cnt_G == cnt_H):
             arr2.sort()
             dist = arr2[-1] - arr2[0]
             if not dist in result:
                 result.append(dist)
-
-    # print(f"---------------i={i}")
 
 if N == 1:
     print(0)
