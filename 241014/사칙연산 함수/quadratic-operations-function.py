@@ -6,7 +6,7 @@ def cal(a,o,c):
     elif o == '*':
         print(f"{a} {o} {c} = {int(a)*int(c)}")
     elif o == '/':
-        print(f"{a} {o} {c} = {int(a)/int(c)}")
+        print(f"{a} {o} {c} = {int(a)//int(c)}")
     else:
         print("False")
 
