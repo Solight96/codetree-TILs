@@ -11,7 +11,7 @@ result = 0
 
 for i in range(N):
     arr2 = copy.deepcopy(arr)
-    arr2[i] /= 2
+    arr2[i] //= 2
     arr2.sort()
     num = 0
     B2 = copy.deepcopy(B)
@@ -20,7 +20,7 @@ for i in range(N):
         if B2 >= 0:
             num += 1
         else:
-            result = max(result, num)
             break
+    result = max(result, num)
 
 print(result)
