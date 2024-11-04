@@ -18,7 +18,7 @@ for i in range(1, N+1):
                 dev = arr[k]
                 x = dev.find(str(i))
                 y = dev.find(str(j))
-                if x > y:
+                if x < y:
                     cnt += 1
             
             if cnt == K:
