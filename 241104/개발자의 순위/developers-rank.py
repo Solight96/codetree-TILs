@@ -3,7 +3,7 @@ K, N = map(int, input().split())
 arr = []
 
 for _ in range(K):
-    arr.append(input())
+    arr.append(input().split())
 
 result = 0
 
@@ -16,8 +16,8 @@ for i in range(1, N+1):
         else:
             for k in range(K):
                 dev = arr[k]
-                x = dev.find(str(i))
-                y = dev.find(str(j))
+                x = dev.index(str(i))
+                y = dev.index(str(j))
                 if x < y:
                     cnt += 1
             
