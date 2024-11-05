@@ -28,7 +28,7 @@ if len(arr_pmt) != 1 and S != 1: # 아픈 사람이 여러 명이면
                 if not arr_pmt[j][1] in arr_m:
                     arr_m.append(arr_pmt[j][1]) # 그 때의 m을 저장 (같이 먹었기에 의심되는 치즈..)
 else: # 아픈 사람이 혼자면
-    arr_m = arr_pmt[0][1]
+    arr_m = [arr_pmt[0][1]]
 
 arr = []
 
