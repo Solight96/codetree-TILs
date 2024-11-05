@@ -1,3 +1,5 @@
+import sys
+
 T, a, b = map(int,input().split())
 
 arr = [0] * 1001
@@ -11,16 +13,20 @@ result = []
 for i in range(a, b+1):
     d1_list = []
     d2_list = []
+    d1 = sys.maxsize
+    d2 = sys.maxsize
     for j in range(a, b+1):
         if arr[j] == 'S':
             d1_list.append(abs(j-i))
+        if len(d1_list) != 0:
             d1 = min(d1_list)
     for j in range(a, b+1):
         if arr[j] == 'N':
             d2_list.append(abs(j-i))
+        if len(d2_list) != 0:
             d2 = min(d2_list)
     
-    if d1 <= d2:
+    if not d1 == sys.maxsize and d2 == sys.maxsize and d1 <= d2:
         result.append(i)
 
 print(len(result))
