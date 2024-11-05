@@ -21,6 +21,9 @@ for h in range(max(arr)):
         if arr2[i] != 0 and arr2[i+1] == 0:
             cnt += 1
     
-    result.append(cnt+1)
+    if arr2[-1] != 0 :
+        result.append(cnt+1)
+    else:
+        result.append(cnt)
 
 print(max(result))
