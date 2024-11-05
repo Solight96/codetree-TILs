@@ -25,8 +25,8 @@ for i in range(a, b+1):
             d2_list.append(abs(j-i))
         if len(d2_list) != 0:
             d2 = min(d2_list)
-    
-    if not d1 == sys.maxsize and d2 == sys.maxsize and d1 <= d2:
+
+    if not d1 == sys.maxsize and d1 <= d2:
         result.append(i)
 
 print(len(result))
