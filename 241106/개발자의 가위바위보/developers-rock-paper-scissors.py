@@ -13,8 +13,12 @@ for i in range(len(arr2)):
     cnt = 0
     for j in range(len(arr)):
         a, b = arr[j]
-        if pri.index(a) < pri.index(b) and not (a == pri[1] and b == pri[-1]):
+        if pri.index(a) < pri.index(b):
+            if not (a == pri[0] and b == pri[-1]):
+                cnt += 1
+        if a == pri[-1] and b == pri[0]:
             cnt += 1
+            
     result.append(cnt)
 
 print(max(result))
