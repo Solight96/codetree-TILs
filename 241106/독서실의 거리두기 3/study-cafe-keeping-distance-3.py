@@ -21,4 +21,4 @@ for i in range(len(arr)-1):
         y = j
 
 arr[(x+y)//2] = '1'
-print((x+y)//2)
+print(min(abs(x-(x+y)//2), abs(y-(x+y)//2)))
