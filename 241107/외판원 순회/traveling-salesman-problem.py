@@ -11,10 +11,19 @@ result = []
 
 def choose(idx):
     if idx == n:
+        arr.insert(0, 0)
+        arr.append(0)
+        for i in range(n):
+            if board[arr[i]][arr[i+1]] == 0:
+                arr.pop(0)
+                arr.pop(-1)        
+                return
+        arr.pop(0)
+        arr.pop(-1)
         num = board[arr[-1]][0]
         a = 0
         for i in range(n-1):
-            elem = arr[i] 
+            elem = arr[i]
             num += board[a][elem]
             a = elem
         result.append(num)
