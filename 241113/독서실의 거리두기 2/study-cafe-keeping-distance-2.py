@@ -22,10 +22,12 @@ for i in range(len(arr)):
                     else:
                         cnt += 1
                         break
-                if cnt != 0:
-                    cnt_list.append(cnt)
-            
+                cnt_list.append(cnt)
+        if arr[-1] == '0':
+            cnt_list.pop(-1)
+        
         cnt = min(cnt_list)
+
         if num < cnt:
             num = cnt
             x = i
