@@ -6,7 +6,7 @@ def is_conti_partial_seq(a, b):
     q = b[0]
     for i in range(len(a)):
         if a[i] == q:
-            if i+len(b) < len(a):
+            if i+len(b) <= len(a):
                 for j in range(i, i+len(b)):
                     if a[j] == b[j-i]:
                         continue
