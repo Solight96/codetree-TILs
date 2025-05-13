@@ -6,11 +6,12 @@ def is_conti_partial_seq(a, b):
     q = b[0]
     for i in range(len(a)):
         if a[i] == q:
-            for j in range(i+1, i+len(b)):
+            for j in range(i, i+len(b)):
                 if a[j] == b[j-i]:
-                    return True
+                    continue
                 else:
                     return False
+            return True
 
 if is_conti_partial_seq(a,b):
     print("Yes")
