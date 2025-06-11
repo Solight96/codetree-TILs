@@ -1,0 +1,17 @@
+n1, n2 = map(int, input().split())
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+
+def is_conti_partial_seq(a, b):
+    q = b[0]
+    for i in range(len(a)):
+        if a[i] == q:
+            if i+len(b) > len(a): return False
+            for j in range(i, i+len(b)):
+                if a[j] != b[j-i]: return False
+            return True
+
+if is_conti_partial_seq(a,b):
+    print("Yes")
+else:
+    print("No")
